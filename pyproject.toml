@@ -1,14 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "stt-bench"
 version = "0.1.0"
+authors = [
+  { name="Gautam Jha", email="gautam@kalpalabs.ai" },
+]
+description = "A benchmark tool for Speech-to-Text models."
+readme = "README.md"
+license = { file="LICENSE" }
 requires-python = "==3.12.3"
 dependencies = [
     "datasets==4.0.0",
     "hf-transfer==0.1.9",
-    "librosa>=0.11.0", # librosa is needed as older datasets versions (like 3.6.0) don't contain it by default.
-    "torch==2.7.0", # getting `NotImplementedError: Could not run 'torchcodec_ns::create_from_tensor' with arguments from the 'CPU' backend.` with torch==2.8.0
+    "librosa>=0.11.0",
+    "torch==2.7.0",
     "torchaudio==2.7.0",
-    # required for parsing audio files in datasets. latest version errors out: https://github.com/huggingface/datasets/issues/7707#issuecomment-3221101384
     "torchcodec==0.5.0",
     "transformers>=4.52.4",
     "jiwer>=4.0.0",
@@ -17,3 +26,17 @@ dependencies = [
     "typer>=0.20.0",
     "deepgram-sdk>=5.2.0",
 ]
+
+[project.scripts]
+stt-bench = "src.main:app"
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+namespaces = true

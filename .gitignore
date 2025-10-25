@@ -2,3 +2,6 @@ uv.lock
 .venv/*
 **/__pycache__/
 *csv
+*.egg-info/
+dist/
+build/
