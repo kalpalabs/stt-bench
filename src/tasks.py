@@ -24,11 +24,3 @@ class STTDataset:
             lang = sample.get(self.language_column_name) if self.language_column_name is not None else None
             
             yield audio, sr, sample[self.transcript_column_name], lang
-
-
-class SvarahDataset(STTDataset):
-    def __iter__(self, split: str):
-        for sample in self.dataset_dict[split]:
-            audio_data = sample[self.audio_column_name].get_all_samples()
-            audio, sr = audio_data.data, audio_data.sample_rate
-            yield audio, sr, sample[self.transcript_column_name], "en"  # Svarah dataset is in English

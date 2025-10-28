@@ -25,6 +25,12 @@ dependencies = [
     "onnxruntime>=1.23.2",
     "typer>=0.20.0",
     "deepgram-sdk>=5.2.0",
+    "indic-nlp-library>=0.92",
+    "urduhack>=0.1.4",
+    "pycountry>=24.6.1",
+    "openai-whisper>=20250625",
+    "sarvamai>=0.1.21",
+    "google-genai>=1.46.0",
 ]
 
 [project.scripts]
