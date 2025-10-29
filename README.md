@@ -2,6 +2,13 @@
 
 `stt-bench` is a command-line utility for benchmarking speech-to-text models on English & multilingual datasets with native support for Indic languages.
 
+## Results
+<div align="center">
+  <img src="results/indic_voices_comparision.png" alt="IndicVoices Comparison" width="45%" style="margin-right: 2%;">
+  <img src="results/vaani_comparision.png" alt="Vaani Comparison" width="45%">
+</div>
+
+
 ## Installation
 
 ```bash
